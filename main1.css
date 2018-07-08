@@ -1,0 +1,41 @@
+html,
+body {
+    color: #211f1e;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+    top: 100px;
+}
+
+h1 {
+    font-family: "HelveticaNeue-UltraLight", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 80px;
+    font-weight: normal;
+    margin: 0;
+    text-align: right;
+}
+
+h2 {
+    border-top: 1px solid #211f1e;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0 40px 0;
+    padding: 30px 0 0 0;
+    text-align: right;
+}
+
+.stock>div {
+    font-weight: bold;
+    line-height: 48px;
+}
+
+.quote span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.last {
+    margin-bottom: 100px;
+}
