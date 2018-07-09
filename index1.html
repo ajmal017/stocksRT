@@ -1,56 +1,38 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html ng-app="iexStocks">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <title>Daily IEX Trade Volume</title>
+    <script data-require="lodash.js@4.6.1" data-semver="4.6.1" src="https://cdn.jsdelivr.net/lodash/4.6.1/lodash.js"></script>
+    <script>
+        document.write('<base href="' + document.location + '" />');
+    </script>
+    <link rel="stylesheet" href="main1.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link href="main1.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-nvd3/1.0.5/angular-nvd3.min.js"></script>
+    <script src="maincontroller1.js"></script>
 
-    <!-- Include the AngularJS library -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
 </head>
+<div class="container-fluid">
+    <h1>IEX Trade Volume: Last 5 Days</h1>
+    <h6>* <a href="https://iextrading.com/developer/docs/#historical-daily">volume refers to executions received from order routed to away trading centers</a> </h6>
+</div>
 
-<body ng-app="StocksApp">
+<body ng-controller="MainCtrl">
 
-    <div class="main" ng-controller="MainController">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 col-sm-offset-7">
+    <div class="row">
+        <div class="col">
 
-                    <h2>Updates</h2>
-                    <div class="stocks" ng-repeat="stock in fiveDay.AAPL">
-                        <div class="stock row">
-                            <div class="symbol col-md-4">
-                                <p>{{ stock.symbol }}</p>
-                            </div>
-                            <div class="companyName col-md-3">
-                                <p>{{ stock.companyName }}</p>
-                            </div>
 
-                            <div class="open col-md-2">
-                                <p>{{ stock.open }}</p>
-                            </div>
-                            <div class="opentime col-md-2">
-                                <p>{{ stock.openTime | date }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </ul>
+            <nvd3 options="barOptions" data="barData"></nvd3>
         </div>
     </div>
 
-    <!-- Modules -->
-    <script src="app1.js"></script>
-
-    <!-- Controllers -->
-    <script src="MainController1.js"></script>
-
-    <!-- Services -->
-    <script src="forecast.js"></script>
-
-    <!-- Directives -->
 
 
 </body>
